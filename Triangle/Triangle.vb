@@ -27,12 +27,12 @@ Public Class Triangle
         Dim n As Integer
         Do
             n = Sides + Angles
-            If Angles = 2 Then TryAA()
             If Sides = 3 Then TrySSS()
             If Sides = 2 AndAlso Angles >= 1 Then TrySAS()
             If Sides = 2 AndAlso Angles >= 1 Then TrySSA()
             If Sides = 1 AndAlso Angles >= 2 Then TryAAS()
-        Loop While Sides + Angles > n ' continue while making progress
+            If Angles = 2 Then TryAA()
+        Loop While Not Solved AndAlso Sides + Angles > n ' continue while making progress
         SortNames()
     End Sub
 
