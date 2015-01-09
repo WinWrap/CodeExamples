@@ -9,7 +9,7 @@ Sub Main()
     CreateUI
 End Sub
 
-Public Class Triangle
+Class Triangle
     Private Corners As New List(Of TriangleCorner)
 
     Public Sub New(Sa As Double, Sb As Double, Sc As Double,
@@ -169,7 +169,7 @@ Public Class Triangle
     End Function
 End Class
 
-Public Class TriangleCorner
+Class TriangleCorner
     Public Name As String
     Public Side As Double
     Public Angle As Double
@@ -185,21 +185,21 @@ Public Class TriangleCorner
     End Function
 End Class
 
-Public Class TriangleCornerNameComparer
+Class TriangleCornerNameComparer
     Implements IComparer(Of TriangleCorner)
     Public Function Compare(x As TriangleCorner, y As TriangleCorner) As Integer Implements IComparer(Of TriangleCorner).Compare
         Return x.Name.CompareTo(y.Name)
     End Function
 End Class
 
-Public Class TriangleCornerSideComparer
+Class TriangleCornerSideComparer
     Implements IComparer(Of TriangleCorner)
     Public Function Compare(x As TriangleCorner, y As TriangleCorner) As Integer Implements IComparer(Of TriangleCorner).Compare
         Return If(x.Side = y.Side, x.Angle.CompareTo(y.Angle), x.Side.CompareTo(y.Side))
     End Function
 End Class
 
-Public Class TriangleCornerAngleComparer
+Class TriangleCornerAngleComparer
     Implements IComparer(Of TriangleCorner)
     Public Function Compare(x As TriangleCorner, y As TriangleCorner) As Integer Implements IComparer(Of TriangleCorner).Compare
         Return If(x.Angle = y.Angle, x.Side.CompareTo(y.Side), x.Angle.CompareTo(y.Angle))
@@ -269,7 +269,7 @@ End Function
 Sub SelectTriangle(index As Integer)
     Dim Category As String = {"SSS", "SAS", "SSA", "AAA", "ASA", "AAS"}(index)
     Dim enables As String = {"abc", "Abc", "Bbc", "ABC", "ABc", "ACc"}(index)
-    'DlgSetPicture "Picture1", MacroDir & "\triangle-" & Category & ".bmp", 0
+    DlgSetPicture "Picture1", MacroDir & "\triangle-" & Category & ".bmp", 0
     For Each dp As DialogParameter In DialogParameters.Values
         dp.ConditionalEnable(enables)
     Next
