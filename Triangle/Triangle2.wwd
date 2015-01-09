@@ -1,7 +1,5 @@
 ﻿'#Language "WWB.NET"
 
-' runs in sandbox
-
 Imports System
 Imports System.Collections.Generic
 
@@ -12,7 +10,6 @@ Sub Main()
 End Sub
 
 Public Class Triangle
-    ' http://www.mathsisfun.com/algebra/trig-solving-triangles.html
     Private Corners As New List(Of TriangleCorner)
 
     Public Sub New(Sa As Double, Sb As Double, Sc As Double,
@@ -64,6 +61,7 @@ Public Class Triangle
             If asin > 1 Then asin = 1
             Corners(1).Angle = Math.ASin(asin)
         End If
+    ' http://www.mathsisfun.com/algebra/trig-solving-triangles.html
     End Sub
 
     Private Sub TrySAS()
