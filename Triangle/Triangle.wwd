@@ -119,7 +119,7 @@ Class DialogParameter
 
     Public Property Value As Double
         Get
-            Dim v As Double = Abs(Val(DlgText(field)))
+            Dim v As Double = Val(DlgText(field))
             If Left(field, 1) = "A" Then v *= Math.PI/180
             Return v
         End Get

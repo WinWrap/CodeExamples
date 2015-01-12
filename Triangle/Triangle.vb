@@ -1,5 +1,4 @@
-﻿Attribute VB_Name = "Triangle"
-'#Language "WWB.NET"
+﻿'#Language "WWB.NET"
 
 Imports System
 Imports System.Collections.Generic
